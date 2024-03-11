@@ -1,0 +1,40 @@
+{
+    "type": "module",
+    "version": "1.0.0",
+    "description": "A Proxy that focuses on usability, performance and customizability.",
+    "license": "AGPL-3.0-only",
+    "author": "Ruby Network",
+    "scripts": {
+        "preinstall": "npx -y only-allow pnpm",
+        "dev": "bundle exec rerun --ignore 'src/public/css/*' --signal 'TERM' -c -w 5 --no-notify -- puma",
+        "start": "bundle exec puma -e production",
+        "install": "pnpm run build && bundle install",
+        "build:rh": "tsc -p ./rammerhead/tsconfig.json",
+        "build:epoxytransport": "cd ./epoxytransport/ && npm run build",
+        "build": "pnpm run build:rh && pnpm run build:epoxytransport",
+        "cli": "bundle exec ruby ./cli/cli.rb"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "dependencies": {
+        "@fastify/caching": "^8.3.0",
+        "@fastify/http-proxy": "^9.4.0",
+        "@fastify/middie": "^8.3.0",
+        "@mercuryworkshop/bare-mux": "^1.0.5",
+        "@mercuryworkshop/epoxy-transport": "workspace:*",
+        "@mercuryworkshop/libcurl-transport": "^1.2.1",
+        "@nebula-services/dynamic": "0.7.2-patch.2",
+        "@titaniumnetwork-dev/ultraviolet": "^3.0.0",
+        "@tomphttp/bare-client": "workspace:*",
+        "@tomphttp/bare-server-node": "^2.0.3",
+        "chalk": "^5.3.0",
+        "fastify": "^4.26.2",
+        "progress-estimator": "^0.3.1",
+        "rammerhead": "https://github.com/Ruby-Network/rammerhead/releases/download/v1/rammerhead-2.tgz",
+        "sass": "^1.71.1",
+        "typescript": "^5.4.2",
+        "wisp-server-node": "^1.0.2",
+        "yaml": "^2.4.1"
+    }
+}
