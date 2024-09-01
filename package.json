@@ -21,7 +21,7 @@
         "@fastify/caching": "^8.3.0",
         "@fastify/http-proxy": "^9.4.0",
         "@fastify/middie": "^8.3.0",
-        "@mercuryworkshop/bare-mux": "^1.0.5",
+        "@mercuryworkshop/bare-mux": "^2.0.5",
         "@mercuryworkshop/epoxy-transport": "workspace:*",
         "@mercuryworkshop/libcurl-transport": "^1.2.1",
         "@nebula-services/dynamic": "0.7.2-patch.2",
